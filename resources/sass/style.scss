@@ -1,0 +1,498 @@
+@import '../../public/module/setting';
+@import '../../public/module/effects';
+@import '../../public/module/shape';
+
+@include AllEffectCSS();
+
+* {
+    margin: $zero;
+    padding: $zero;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    outline: $none;
+    user-select: $none;
+}
+// Responsive untuk devices Laptop
+@media only screen and (min-width:1440px){
+    @mixin DevCardLayout{
+        #card-main-vm{
+            .card-title{
+                font-weight: bold; 
+                font-family: serif;
+            }
+        }
+    }
+    body{
+        overflow: auto;
+        overflow-x: hidden;
+        justify-content: center;
+        display: $flex;
+        flex-direction: $f-col;
+        min-width: $dynamic-width;
+        min-height: $dynamic-height;
+    
+        header {
+            position: $pos-header;
+            background-color: transparent;
+            transition: background-color 0.7s ease;
+            top: $zero;
+            left: $zero;
+            width: $dynamic-width;
+            height: 76px;
+            padding: 15px $zero;
+            padding-right: 1.25%;
+            padding-left: 2%;
+            display: $flex;
+            justify-content: space-between;
+            align-items: $tengah;
+            z-index: 99999;
+    
+            .navbar{
+                a{
+                    font-size: 1.05rem;
+                    color: white;
+                    font-weight: normal;
+                    text-decoration: $none;
+                    font-weight: 400;
+                    margin-left: 15.5px;
+                    transition: .3s;
+                    cursor: pointer;
+                }
+            }
+            #imgicon{
+                float: $kiri;
+                width: 60px;
+            }
+        }
+    
+        #home{
+            position: $pos-sec;
+            width: $width-perc;
+            height: 110dvh;
+            overflow: hidden;
+            display: $flex;
+            flex-direction: $f-col;
+            align-items: $tengah;
+            justify-content: $tengah;
+            text-align: $tengah;
+            margin: $zero;
+            padding: $zero;
+    
+            video {
+                width: 130%;
+                height: 130%;
+                object-fit: cover;
+                z-index: $zero;
+                position: relative;
+            }
+            #text1 {
+                animation: glowAnimation 8s infinite;
+                margin-bottom: 3rem;
+                font-size: 3rem;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                color: whitesmoke;
+                -webkit-text-stroke: 1.38px #000;
+                position: $abs;
+            }
+            #text2 {
+                font-size: 1.02rem;
+                position: $abs;
+                color: white;
+                font-weight: bolder;
+                margin-top: 3%;
+                font-size: 1.3rem;
+            }
+            @include shapeMain();
+        }
+    
+        #visi-misi{
+            position: $pos-sec;
+            width: $dynamic-width;
+            height: 120dvh;
+            background-color: whitesmoke;
+    
+            .textvm{
+                margin-top: 7.1%;
+                top: $zero;
+                left: $zero;
+                display: $flex;
+                width: 100vw;
+                justify-content: $tengah;
+                align-items: $tengah;
+                
+                h2{
+                    font-weight: bold;
+                    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                }
+            }
+            .underline{
+                width: 12%;
+                @include underline();
+            }
+            img{
+                width:40rem;
+                position: $abs !important;
+                right: $zero;
+                margin-right: 5dvw;
+                margin-top: 10.4%;
+            }
+            #card1{
+                margin-top: 2%;
+                margin-left: 2%;
+    
+                #dev2{
+                    max-width: 38rem;
+                    margin-top: 7.5%;
+                    @include DevCardLayout();
+                }
+    
+                #dev3{
+                    max-width: 38rem;
+                    @include DevCardLayout();
+                }
+            }
+            @include shapeVM();
+        }
+    
+        #jurusan{
+            width: $dynamic-width;
+            height: 109dvh;
+            background-color:floralwhite;
+            position: $pos-sec;
+            @include shapeJurusan();
+    
+            .txtJ{
+                top: $zero;
+                position: $rel;
+                display: $flex;
+                margin-top: 14.2dvh;
+                justify-content: $tengah;
+                align-items: $tengah;
+    
+                h2{
+                    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                    font-weight: bold;
+                }
+            }
+            .underline {
+                width: 16%;
+                z-index: 999;
+                @include underline();
+            }
+            .content-jurusan{
+                display: $flex;
+                position: $pos-sec;
+                flex-direction: $f-col;
+    
+                .info-box {
+                    margin-top: 6dvh;
+                    @include box();
+    
+                    #case-box{
+                        font-size: 32px;
+                        color: dodgerblue;
+                        margin-bottom: 10px;
+                    }
+                }
+                .info-box2{
+                    margin-top: 1dvh;
+                    margin-bottom: 2dvh;
+                    @include box();
+    
+                    #case-box2{
+                        font-size: 32px;
+                        color: dodgerblue;
+                        margin-bottom: 10px;
+                    }
+                }
+                #card-jurusan{
+                    margin-top: 6dvh;
+                    justify-content: $tengah; 
+                    position: $abs; 
+                    width: 1132px; 
+                    height: 500px; 
+                    margin-left: 0.7rem;
+    
+                    #wrapp{
+                        .col-md-8{
+                            .card-body{
+                                #rpl-select{
+                                    ol{
+                                        font-size: large;
+                                    }
+                                }
+                                #tkj-select, #dkv-select, #telco-select{
+                                    display: none;
+    
+                                    ol{
+                                        font-size: large;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                #button-all-type{
+                    margin-left: 0.6rem;
+                    margin-right: 0.7rem;
+                    margin-top: 0.25rem;
+                }
+            }
+        }
+    
+        #ekskul{
+            position: $pos-sec;
+            width: $dynamic-width;
+            height: 110vh;
+            background-color: #CAFAFF;
+            flex-direction: $f-col;
+            @include shapeEkskul();
+    
+            .text-extra{
+                top: $zero;
+                position: $rel;
+                margin-top: 7%;
+                display: $flex;
+                justify-content: center;
+                align-items: center;
+    
+                h2{
+                    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                    font-weight: bold;
+                }
+            }
+            .underline{
+                width: 20%;
+                z-index: 9999;
+                @include underline();
+            }
+            .wrapper{
+                max-width: $dynamic-width;
+                max-height: $dynamic-height;
+                display: $flex;
+                left: $zero;
+                right: $zero;
+                justify-content: $tengah;
+                padding: $zero;
+                flex-direction: $f-col;
+                margin-top: 3.5%;
+    
+                .img-ekskul-row1{
+                    display: $flex;
+                    flex-direction: $f-row;
+                    justify-content: $tengah;
+                }
+                .img-ekskul-row2, .img-ekskul-row3{
+                    display: $flex;
+                    flex-direction: $f-row;
+                    justify-content: $tengah;
+                    margin-top: 3%;
+                }
+    
+                .img-ekskul-row1, .img-ekskul-row2, .img-ekskul-row3{
+                    .subimg-allrow{
+                        width: max-content;
+                        height: max-content;
+                        display: $flex;
+                        flex-direction: $f-col;
+                        align-items: $tengah;
+                    }
+                    #text-1{margin-left: 0px;} #text-2{margin-left: 38px;} #text-3{margin-left: 38px;} #text-4{margin-left: 37px;} #text-5{margin-left: 41px;} #text-6{margin-left: 37px;}
+                    #img1{width: 160px; height: 118.5px;} #img2, #img3, #img4, #img5{width: 150px; height: 120px; margin-left: 40px;} #img6{width: 160px; height: 118.5px; margin-left: 40px;}
+                }
+            }
+        }
+    
+        #p2db{
+            position: $pos-sec;
+            width: $dynamic-width;
+            height: 110dvh;
+            overflow: hidden;
+            display: $flex;
+            padding-top: 4%;
+            flex-direction: $f-col;
+            background-color: #2F93CF;
+            @include shapeP2DB();
+    
+            #img-p2db{
+                margin-top: -13px;
+                margin-left: auto;
+                margin-right: auto;
+                justify-content: center;
+                z-index: 9;
+            }
+            #img-assets1{
+                width: 270px;
+                margin-top: -10px;
+                left: 0;
+                @include imageCloud();
+            }
+            #img-assets2{
+                width: 270px;
+                right: 0;
+                margin-top: -10px;
+                @include imageCloud();
+            }
+            #img-assets3{
+                width: 300px;
+                left: 0;
+                right: 0;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: -25px;
+                @include imageCloud();
+            }
+            .content-p2db{
+                display: $flex;
+                flex-direction: $f-row;
+                left: $zero;
+                padding-left: $zero;
+                margin-top: 50px;
+                margin-left: 24px;
+    
+                img{
+                    width: 25rem;
+                    height: max-content;
+                    margin-top: 1rem;
+                }
+                .text-content-p2db{
+                    margin-left: 20px;
+                    margin-top: 5rem;
+                    display: $flex;
+                    flex-direction: $f-col;
+    
+                    .class1{
+                        display: $flex;
+                        flex-direction: $f-row;
+                        padding: 0;
+                        margin: 0;
+    
+                        .button{
+                            display: inline-flex;
+                            height: 40px;
+                            width: 150px;
+                            border: 2px solid #BFC0C0;
+                            margin: 20px 20px 20px 10px;
+                            color: #BFC0C0;
+                            text-transform: uppercase;
+                            text-decoration: none;
+                            font-size: .8em;
+                            letter-spacing: 1.5px;
+                            align-items: $tengah;
+                            justify-content: $tengah;
+                            overflow: hidden;
+                        }
+                        #button-infop2db {
+                            position: $rel;
+                            overflow: hidden;
+                            cursor: pointer;
+                        }
+                          
+                        #button-infop2db a {
+                            position: $rel;
+                            left: 0;
+                            transition: all .35s ease-Out;
+                        }
+                          
+                        #dub-arrow {
+                            width: 100%;
+                            height: 100%;
+                            background: #BFC0C0;
+                            left: -200px;
+                            position: $abs;
+                            padding: $zero;
+                            display: $flex;
+                            align-items: $tengah;
+                            justify-content: $tengah;
+                            transition: all .35s ease-Out;
+                            bottom: $zero;
+                        }
+                          
+                        #button-infop2db img {
+                            width: 16px;
+                            margin-top: auto;
+                            margin-bottom: auto;
+                        }
+                          
+                        #button-infop2db:hover #dub-arrow {
+                            left: $zero;
+                        }
+                          
+                        #button-infop2db:hover a {
+                            left: 150px;
+                        }
+                        #button-daftar {
+                            position: $rel;
+                            overflow: hidden;
+                            cursor: pointer;
+                        }
+                          
+                        #button-daftar a {
+                            position: $rel;
+                            color: white; 
+                            text-decoration: none;
+                            transition: all .45s ease-Out;
+                        }
+                          
+                        #spin {
+                            width: $zero;
+                            height: $zero;
+                            opacity: $zero;
+                            left: 70px;
+                            top: 20px;
+                            transform: rotate(0deg);
+                            background: none;
+                            position: $abs;
+                            transition: all .5s ease-Out;
+                        }
+                          
+                        #button-daftar:hover #spin {
+                            width: 200%;
+                            height: 500%;
+                            opacity: 1;
+                            left: -70px;
+                            top: -70px;
+                            background: #BFC0C0;
+                            transform: rotate(80deg);
+                        }
+                          
+                        #button-daftar:hover a {
+                            color: #2D3142;
+                        }
+                    }
+                }
+            }
+        }
+    
+        footer{
+            width: $dynamic-width;
+            background-color: #FFFFFF;
+            color: #000000;
+            text-align: center;
+            padding: 10px 0;
+            z-index: 9999;
+            align-items: $tengah;
+            top: $zero;
+            left: $zero;
+    
+            p{
+                margin: $zero;
+            }
+            span{
+                color: blue;
+                text-decoration: none;
+                font-weight: 550;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+::-webkit-scrollbar{
+    width: $zero;
+}
+@supports (-ms-ime-align: auto){
+    html{
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+    }
+}
